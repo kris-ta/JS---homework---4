@@ -86,7 +86,10 @@ const addTask = (event) => {
   // Create and add LI element
   const li = document.createElement("li");
   li.className = "collection-item";
-  li.textContent = taskInput.value; // значення яке ввів користувач
+  // li.textContent = taskInput.value; // значення яке ввів користувач
+  const textSpan = document.createElement("span");
+  textSpan.textContent = taskInput.value;
+  li.append(textSpan);
 
   const deleteButton = document.createElement("span");
   deleteButton.className = "delete-item";
