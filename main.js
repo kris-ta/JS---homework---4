@@ -137,7 +137,6 @@ const editTask = (event) => {
 
     const editedText = prompt("Введіть нову назву.", defaultValue);
     console.log(editedText, typeof editedText);
-    // тут перевірка на null не допомагає, що робити?
 
     if (editedText) {
       textSpan.textContent = editedText;
