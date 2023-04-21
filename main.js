@@ -131,13 +131,17 @@ const editTask = (event) => {
   const isEditIcon = event.target.classList.contains("fa-edit");
   if (isEditIcon) {
     const editedLi = event.target.closest("li");
+
     const textSpan = editedLi.querySelector("span");
     const defaultValue = textSpan.textContent;
 
     const editedText = prompt("Введіть нову назву.", defaultValue);
+    console.log(editedText, typeof editedText);
+    // тут перевірка на null не допомагає, що робити?
 
-    textSpan.textContent = editedText;
-
+    if (editedText) {
+      textSpan.textContent = editedText;
+    }
     // зберегти відредагований таск
 
     const index = editedLi.dataset.index;
